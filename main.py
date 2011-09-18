@@ -47,6 +47,17 @@ os.system ("y")
 os.system ("apt-get install wine")
 os.system ("y")
 
+os.system ("apt-get install git")
+os.system ("y")
+
+os.system ("apt-get install git-gui")
+os.system ("y")
+
+os.system ("apt-get install git-doc")
+os.system ("y")
+
+
+
 
 
 print ("Please insert the three following lines to the file that opens in a few seconds")
