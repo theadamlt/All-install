@@ -38,8 +38,10 @@ os.system ("y")
 os.system ("apt-get install audacity")
 os.system ("y")
 
-os.system ("apt-get install vlc cheese")
+os.system ("apt-get install vlc")
 os.system ("y")
+
+os.system("apt-get install cheese")
 
 os.system ("apt-get install gtk-recordmydesktop")
 os.system ("y")
