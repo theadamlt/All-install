@@ -58,16 +58,19 @@ os.system ("y")
 os.system ("apt-get install git-doc")
 os.system ("y")
 
+os.system ("apt-get install screen")
+os.system ("y")
 
+os.system ("apt-get install irssi")
+os.system ("y")
 
+os.system("apt-get install skype")
 
-
-print ("Please insert the three following lines to the file that opens in a few seconds")
-print ("http://dl.google.com/linux/chrome/deb/")
-print ("http://dl.google.com/linux/talkplugin/deb/")
-print ("http://linux.dropbox.com/ubuntu")
-
-os.system ("gedit /etc/apt/sources.list")
+f=open('/etc/apt/sources.list','w')
+f.write(http://dl.google.com/linux/chrome/deb)
+f.write(http://dl.google.com/linux/talkplugin/deb)
+f.write(http://linux.dropbox.com/ubuntu)
+f.close()
 
 
 os.system ("apt-get install google-chrome-stable")
