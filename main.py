@@ -45,20 +45,12 @@ os.system("apt-get install skype -y")
 
 ###Sourcelist adding###
 
-#f=open ('/etc/apt/sources.list','a')
-#f.write ('http://dl.google.com/linux/chrome/deb')
-#f.write ('http://dl.google.com/linux/talkplugin/deb')
-#f.write ('http://linux.dropbox.com/ubuntu')
-#f.close ()
+f=open ('/etc/apt/sources.list','a')
+f.write ('http://dl.google.com/linux/chrome/deb \n')
+f.write ('http://dl.google.com/linux/talkplugin/deb \n')
+f.write ('http://linux.dropbox.com/ubuntu')
+f.close ()
 
-
-strings = '''http://dl.google.com/linux/chrome/deb
-http://dl.google.com/linux/talkplugin/deb
-http://linux.dropbox.com/ubuntu'''.split()
- 
-with open('/etc/apt/sources.list', 'a') as output:
-    output.write('\n'.join(strings))
- 
 
 os.system ("apt-get install google-chrome-stable")
 
@@ -108,4 +100,3 @@ os.system ("apt-get install git-doc -y")
 os.system ("wget http://download.netbeans.org/netbeans/7.0.1/final/bundles/netbeans-7.0.1-ml-php-linux.sh")
 os.system ("chmod +x netbeans-7.0.1-ml-php-linux.sh")
 os.system ("./netbeans-7.0.1-ml-php-linux.sh")
-
