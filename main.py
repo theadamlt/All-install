@@ -59,9 +59,6 @@ http://linux.dropbox.com/ubuntu'''.split()
 with open('/etc/apt/sources.list', 'a') as output:
     output.write('\n'.join(strings))
  
-# print it out to test
-print(open('/etc/apt/sources.list').read())
-
 
 os.system ("apt-get install google-chrome-stable")
 
