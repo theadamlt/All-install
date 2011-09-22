@@ -6,6 +6,8 @@ print ("Make sure that you run this program as root (sudo python main.py)")
 
 ###Regular programs###
 
+os.system("apt-get install wget -y")
+
 os.system ("apt-get install basket -y")
 
 os.system ("apt-get install arduino -y")
@@ -46,9 +48,9 @@ os.system("apt-get install skype -y")
 ###Sourcelist adding###
 
 f=open ('/etc/apt/sources.list','a')
-f.write ('http://dl.google.com/linux/chrome/deb \n')
-f.write ('http://dl.google.com/linux/talkplugin/deb \n')
-f.write ('http://linux.dropbox.com/ubuntu')
+f.write ('deb http://dl.google.com/linux/chrome/deb \n')
+f.write ('deb http://dl.google.com/linux/talkplugin/deb \n')
+f.write ('deb http://linux.dropbox.com/ubuntu')
 f.close ()
 
 
