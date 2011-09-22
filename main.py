@@ -1,7 +1,7 @@
 import os
 
-print ("Welcome to Adam Lilienfeldt's All-install program. This will only work on Linux distributions that supports apt-get")
-print ("Make sure that you run this program as root (sudo)")
+print ("This will only work on Linux distributions that supports apt-get")
+print ("Make sure that you run this program as root (sudo python main.py)")
 
 
 ###Regular programs###
@@ -45,11 +45,22 @@ os.system("apt-get install skype -y")
 
 ###Sourcelist adding###
 
-f=open ('/etc/apt/sources.list','a')
-f.write ('http://dl.google.com/linux/chrome/deb')
-f.write ('http://dl.google.com/linux/talkplugin/deb')
-f.write ('http://linux.dropbox.com/ubuntu')
-f.close ()
+#f=open ('/etc/apt/sources.list','a')
+#f.write ('http://dl.google.com/linux/chrome/deb')
+#f.write ('http://dl.google.com/linux/talkplugin/deb')
+#f.write ('http://linux.dropbox.com/ubuntu')
+#f.close ()
+
+
+strings = '''http://dl.google.com/linux/chrome/deb
+http://dl.google.com/linux/talkplugin/deb
+http://linux.dropbox.com/ubuntu'''.split()
+ 
+with open('/etc/apt/sources.list', 'a') as output:
+    output.write('\n'.join(strings))
+ 
+# print it out to test
+print(open('/etc/apt/sources.list').read())
 
 
 os.system ("apt-get install google-chrome-stable")
@@ -76,6 +87,15 @@ os.system("apt-get remove sudoku -y")
 
 os.system("apt-get remove aisleriot -y")
 
+os.system("apt-get remove evolution -y")
+
+os.system("apt-get remove rhytmthbox -y")
+
+os.system("apt-get remove totem -y")
+
+os.system("apt-get remove tomboy -y")
+
+os.system("apt-get remove f-spot -y")
 
 ###Git installation and github setup###
 
@@ -85,4 +105,10 @@ os.system ("apt-get install git -y")
 os.system ("apt-get install git-gui -y")
 
 os.system ("apt-get install git-doc -y")
+
+
+###Install Netbeans###
+os.system ("wget http://download.netbeans.org/netbeans/7.0.1/final/bundles/netbeans-7.0.1-ml-php-linux.sh")
+os.system ("chmod +x netbeans-7.0.1-ml-php-linux.sh")
+os.system ("./netbeans-7.0.1-ml-php-linux.sh")
 
