@@ -42,8 +42,11 @@ os.system ("apt-get install screen -y")
 
 os.system ("apt-get install irssi -y")
 
-os.system("apt-get install skype -y")
+os.system ("apt-get install skype -y")
 
+os.system ("apt-get install logmein-hamachi -y")
+
+os.system ("apt-get install haguichi -y")
 
 ###Sourcelist adding###
 
@@ -102,3 +105,7 @@ os.system ("apt-get install git-doc -y")
 os.system ("wget http://download.netbeans.org/netbeans/7.0.1/final/bundles/netbeans-7.0.1-ml-php-linux.sh")
 os.system ("chmod +x netbeans-7.0.1-ml-php-linux.sh")
 os.system ("./netbeans-7.0.1-ml-php-linux.sh")
+
+###Install Sublime###
+os.system("wget http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202%20Build%202126.tar.bz2")
+os.system("tar -zxvf Sublime%20Text%202%20Build%202126.tar.bz2 -C /Home/ ")
