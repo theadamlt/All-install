@@ -48,6 +48,8 @@ os.system ("apt-get install logmein-hamachi -y")
 
 os.system ("apt-get install haguichi -y")
 
+os.system("apt-get install vim vim-common vim-gnome vim-gui-common vim-runtime")
+
 ###Sourcelist adding###
 
 f=open ('/etc/apt/sources.list','a')
@@ -92,7 +94,6 @@ os.system("apt-get remove tomboy -y")
 os.system("apt-get remove f-spot -y")
 
 ###Git installation and github setup###
-
 
 os.system ("apt-get install git -y")
 
