@@ -110,3 +110,7 @@ os.system ("./netbeans-7.0.1-ml-php-linux.sh")
 ###Install Sublime###
 os.system("wget http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202%20Build%202126.tar.bz2")
 os.system("tar -zxvf Sublime%20Text%202%20Build%202126.tar.bz2 -C /Home/ ")
+
+###Install xampp###
+os.system("wget http://downloads.sourceforge.net/project/xampp/BETAS/xampp-linux-1.7.7.tar.gz?r=http%3A%2F%2Fwww.apachefriends.org%2Fen%2Fxampp-linux.html&ts=1318110508&use_mirror=dfn")
+os.system("tar xvfz xampp-linux-1.7.7.tar.gz -C /opt")
