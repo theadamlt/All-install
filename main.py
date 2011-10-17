@@ -68,9 +68,9 @@ os.system ("apt-get install nautilus-dropbox")
 
 ###Install Notepad++###
 
-os.system ("wget http://download.tuxfamily.org/notepadplus/5.9.3/npp.5.9.3.Installer.exe")
-os.system ("chmod +x npp.5.9.3.Installer.exe")
-os.system("wine start npp.5.9.3.Installer.exe")
+#os.system ("wget http://download.tuxfamily.org/notepadplus/5.9.3/npp.5.9.3.Installer.exe")
+#os.system ("chmod +x npp.5.9.3.Installer.exe")
+#os.system("wine start npp.5.9.3.Installer.exe")
 
 ###Remove games###
 
@@ -93,7 +93,7 @@ os.system("apt-get remove tomboy -y")
 
 os.system("apt-get remove f-spot -y")
 
-###Git installation and github setup###
+###Git installation###
 
 os.system ("apt-get install git -y")
 
@@ -103,9 +103,9 @@ os.system ("apt-get install git-doc -y")
 
 
 ###Install Netbeans###
-os.system ("wget http://download.netbeans.org/netbeans/7.0.1/final/bundles/netbeans-7.0.1-ml-php-linux.sh")
-os.system ("chmod +x netbeans-7.0.1-ml-php-linux.sh")
-os.system ("./netbeans-7.0.1-ml-php-linux.sh")
+#os.system ("wget http://download.netbeans.org/netbeans/7.0.1/final/bundles/netbeans-7.0.1-ml-php-linux.sh")
+#os.system ("chmod +x netbeans-7.0.1-ml-php-linux.sh")
+#os.system ("./netbeans-7.0.1-ml-php-linux.sh")
 
 ###Install Sublime###
 os.system("wget http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202%20Build%202126.tar.bz2")
