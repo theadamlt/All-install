@@ -58,6 +58,7 @@ f.write ('deb http://dl.google.com/linux/talkplugin/deb \n')
 f.write ('deb http://linux.dropbox.com/ubuntu')
 f.close ()
 
+os.system("apt-get update")
 
 os.system ("apt-get install google-chrome-stable")
 
@@ -101,15 +102,10 @@ os.system ("apt-get install git-gui -y")
 
 os.system ("apt-get install git-doc -y")
 
-
-###Install Netbeans###
-#os.system ("wget http://download.netbeans.org/netbeans/7.0.1/final/bundles/netbeans-7.0.1-ml-php-linux.sh")
-#os.system ("chmod +x netbeans-7.0.1-ml-php-linux.sh")
-#os.system ("./netbeans-7.0.1-ml-php-linux.sh")
-
 ###Install Sublime###
-os.system("wget http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202%20Build%202126.tar.bz2")
-os.system("tar -zxvf Sublime%20Text%202%20Build%202126.tar.bz2 -C /Home/ ")
+os.system("add-apt-repository ppa:webupd8team/sublime-text-2")
+os.system("sudo apt-get update")
+os.system("sudo apt-get install sublime-text-2 -y")
 
 ###Install xampp###
 os.system("wget http://downloads.sourceforge.net/project/xampp/BETAS/xampp-linux-1.7.7.tar.gz?r=http%3A%2F%2Fwww.apachefriends.org%2Fen%2Fxampp-linux.html&ts=1318110508&use_mirror=dfn")
