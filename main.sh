@@ -27,3 +27,25 @@ tar xvfz xampp-linux-1.7.7.tar.gz -C /opt
 wget http://download.netbeans.org/netbeans/7.0.1/final/bundles/netbeans-7.0.1-ml-php-linux.sh
 chmod +x netbeans-7.0.1-ml-php-linux.sh
 ./netbeans-7.0.1-ml-php-linux.sh
+
+###Processing###
+wget http://processing.googlecode.com/files/processing-1.5.1-linux.tgz
+tar zxvf processing-1.5.1-linux.tgz
+mv processing-1.5.1 /usr/lib
+cd /usr/lib
+wget http://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Processing_Logo_Clipped.svg/256px-Processing_Logo_Clipped.svg.png
+
+cat <<EOF>> /usr/share/applications/Processing IDE.desktop
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Name=Processing IDE
+GenericName=IDE
+Comment=Write Processing
+Exec=/usr/lib/processing/processing-1.5.1 %F
+Terminal=false
+Type=Application
+Icon=/usr/lib/processing-1.5.1/Processing_Logo_Clipped.svg/256px-Processing_Logo_Clipped.svg.png
+Categories=Development;Utility;
+Name[en_US]=Processing IDE
+EOF
