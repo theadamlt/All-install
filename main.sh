@@ -21,7 +21,7 @@ f-spot
 
 ###Install xampp###
 wget http://downloads.sourceforge.net/project/xampp/BETAS/xampp-linux-1.7.7.tar.gz?r=http%3A%2F%2Fwww.apachefriends.org%2Fen%2Fxampp-linux.html&ts=1318110508&use_mirror=dfn 
-tar xvfz xampp-linux-1.7.7.tar.gz -C /opt 
+tar xvfz xampp-linux-1.7.7.tar.gz -C /opt
 
 ###Install Netbeans###
 wget http://download.netbeans.org/netbeans/7.0.1/final/bundles/netbeans-7.0.1-ml-php-linux.sh
@@ -32,7 +32,7 @@ chmod +x netbeans-7.0.1-ml-php-linux.sh
 wget http://processing.googlecode.com/files/processing-1.5.1-linux.tgz
 tar zxvf processing-1.5.1-linux.tgz
 mv processing-1.5.1 /usr/lib
-cd /usr/lib
+cd /usr/lib/processing-1.5.1
 wget http://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Processing_Logo_Clipped.svg/256px-Processing_Logo_Clipped.svg.png
 
 cat <<EOF>> /usr/share/applications/Processing IDE.desktop
