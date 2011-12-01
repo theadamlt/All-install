@@ -17,7 +17,11 @@ apt-get install -y --force-yes wget basket arduino eagle gresistor gimp filezill
 
 ###Remove games###
 apt-get remove -y gbrainy gnome-mahjongg sudoku aisleriot evolution rhytmthbox totem tomboy 
-f-spot 
+f-spot
+
+
+apt-get update
+apt-get autoremove
 
 ###Install xampp###
 wget http://downloads.sourceforge.net/project/xampp/BETAS/xampp-linux-1.7.7.tar.gz?r=http%3A%2F%2Fwww.apachefriends.org%2Fen%2Fxampp-linux.html&ts=1318110508&use_mirror=dfn 
@@ -49,3 +53,4 @@ Icon=/usr/lib/processing-1.5.1/Processing_Logo_Clipped.svg/256px-Processing_Logo
 Categories=Development;Utility;
 Name[en_US]=Processing IDE
 EOF
+
