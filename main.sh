@@ -27,10 +27,6 @@ apt-get autoremove
 wget http://downloads.sourceforge.net/project/xampp/BETAS/xampp-linux-1.7.7.tar.gz?r=http%3A%2F%2Fwww.apachefriends.org%2Fen%2Fxampp-linux.html&ts=1318110508&use_mirror=dfn 
 tar xvfz xampp-linux-1.7.7.tar.gz -C /opt
 
-###Install Netbeans###
-wget http://download.netbeans.org/netbeans/7.0.1/final/bundles/netbeans-7.0.1-ml-php-linux.sh
-chmod +x netbeans-7.0.1-ml-php-linux.sh
-./netbeans-7.0.1-ml-php-linux.sh
 
 ###Processing###
 wget http://processing.googlecode.com/files/processing-1.5.1-linux.tgz
@@ -53,4 +49,9 @@ Icon=/usr/lib/processing-1.5.1/Processing_Logo_Clipped.svg/256px-Processing_Logo
 Categories=Development;Utility;
 Name[en_US]=Processing IDE
 EOF
+
+###Install Netbeans###
+wget http://download.netbeans.org/netbeans/7.0.1/final/bundles/netbeans-7.0.1-ml-php-linux.sh
+chmod +x netbeans-7.0.1-ml-php-linux.sh
+./netbeans-7.0.1-ml-php-linux.sh
 
