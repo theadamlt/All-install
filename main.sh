@@ -3,10 +3,10 @@
 ###Sourcelist adding###
 
 cat <<EOF>> /etc/apt/sources.list
-deb http://dl.google.com/linux/chrome/deb $(lsb_release -sc) contrib
-deb http://dl.google.com/linux/talkplugin/deb $(lsb_release -sc) contrib
-deb http://linux.dropbox.com/ubuntu $(lsb_release -sc) contrib
-deb http://repository.spotify.com stable non-free $(lsb_release -sc) contrib
+deb http://dl.google.com/linux/chrome/deb
+deb http://dl.google.com/linux/talkplugin/deb
+deb http://linux.dropbox.com/ubuntu
+deb http://repository.spotify.com stable non-free
 EOF
 
 add-apt-repository ppa:webupd8team/sublime-text-2 
