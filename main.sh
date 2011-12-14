@@ -1,19 +1,22 @@
 #!/bin/bash 
 
 ###Sourcelist adding###
-
+ 
 cat <<EOF>> /etc/apt/sources.list
 deb http://dl.google.com/linux/chrome/deb
 deb http://dl.google.com/linux/talkplugin/deb
 deb http://linux.dropbox.com/ubuntu
 deb http://repository.spotify.com stable non-free
+deb http://archive.canonical.com/
 EOF
+
+#sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
 
 add-apt-repository ppa:webupd8team/sublime-text-2 
 
 apt-get update
 
-apt-get install -y --force-yes wget basket arduino eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi skype logmein-hamachi haguichi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-stable google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino
+apt-get install -y --force-yes wget basket arduino eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi skype logmein-hamachi haguichi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-eta google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino
 
 ###Remove crappy software###
 apt-get remove -y gbrainy gnome-mahjongg sudoku aisleriot evolution rhytmthbox totem tomboy 
@@ -54,4 +57,3 @@ EOF
 wget http://download.netbeans.org/netbeans/7.0.1/final/bundles/netbeans-7.0.1-ml-php-linux.sh
 chmod +x netbeans-7.0.1-ml-php-linux.sh
 ./netbeans-7.0.1-ml-php-linux.sh
-
