@@ -3,11 +3,17 @@
 ###Sourcelist adding###
  
 cat <<EOF>> /etc/apt/sources.list
-deb http://dl.google.com/linux/chrome/deb
-deb http://dl.google.com/linux/talkplugin/deb
-deb http://linux.dropbox.com/ubuntu
+#Gnoduino
+deb http://ppa.launchpad.net/pmjdebruijn/gnoduino-release/ubuntu oneiric main
+deb-src http://ppa.launchpad.net/pmjdebruijn/gnoduino-release/ubuntu oneiric main
+#Google Chrome
+deb http://dl.google.com/linux/chrome/deb/ stable main
+#Google talk-plugin
+deb http://dl.google.com/linux/talkplugin/deb/ stable main
+#Dropbox
+deb http://linux.dropbox.com/ubuntu oneiric main
+#Spotify
 deb http://repository.spotify.com stable non-free
-deb http://archive.canonical.com/
 EOF
 
 #sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
