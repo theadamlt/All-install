@@ -18,7 +18,7 @@ EOF
 
 #sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
 
-add-apt-repository ppa:webupd8team/sublime-text-2 
+add-apt-repository ppa:webupd8team/sublime-text-2
 
 apt-get update
 
@@ -63,3 +63,5 @@ EOF
 wget http://download.netbeans.org/netbeans/7.0.1/final/bundles/netbeans-7.0.1-ml-php-linux.sh
 chmod +x netbeans-7.0.1-ml-php-linux.sh
 ./netbeans-7.0.1-ml-php-linux.sh
+
+apt-get autoremove
