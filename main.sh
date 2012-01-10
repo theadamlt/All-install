@@ -14,17 +14,13 @@ deb http://dl.google.com/linux/talkplugin/deb/ stable main
 deb http://linux.dropbox.com/ubuntu oneiric main
 #Spotify
 deb http://repository.spotify.com stable non-free
-#skype
-deb http://archive.canonical.com/
 EOF
-
-#sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
 
 sudo add-apt-repository ppa:webupd8team/sublime-text-2
 
 sudo apt-get update
 
-sudo apt-get install -y --force-yes wget basket arduino eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi skype logmein-hamachi haguichi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-eta google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python2.6 python-gtk2 python-glade2 curl
+sudo apt-get install -y --force-yes wget basket arduino eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi skype logmein-hamachi haguichi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python2.6 python-gtk2 python-glade2 curl openjdk-6-jre 
 
 ###Remove crappy software###
 sudo apt-get remove -y gbrainy gnome-mahjongg sudoku aisleriot evolution rhytmthbox totem tomboy 
@@ -37,6 +33,37 @@ sudo apt-get autoremove
 ###Install xampp###
 wget http://downloads.sourceforge.net/project/xampp/BETAS/xampp-linux-1.7.7.tar.gz?r=http%3A%2F%2Fwww.apachefriends.org%2Fen%2Fxampp-linux.html&ts=1318110508&use_mirror=dfn 
 sudo tar xvfz xampp-linux-1.7.7.tar.gz -C /opt
+
+sudo cat <<EOF>> /usr/share/applications/Xampp Control Panel.desktop
+#!/usr/bin/env xdg-open
+
+
+[Desktop Entry]
+Name=XAMPP Control Panel
+GenericName=XAMPP Control Panel
+Comment=Xampp Control Panel
+Exec=sudo /opt/lampp/share/xampp-control-panel/xampp-control-panel %F
+Terminal=true
+Type=Application
+Icon=/opt/lampp/htdocs/favicon.ico
+Categories=Development;
+Name[en_US]=XAMPP Control Panel
+EOF
+
+sudo cat <<EOF>> /usr/share/applications/MySQL Commandline.desktop
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Name=MySQL Commandline
+GenericName=MySQL Control Panel
+Comment=XAMPP/MySQL Commandline
+Exec=sudo /opt/lampp/bin/mysql -u root %F
+Terminal=true
+Type=Application
+Icon=/opt/lampp/htdocs/favicon.ico
+Categories=Development;
+Name[en_US]=MySQL Commandline
+EOF
 
 
 ###Processing###
