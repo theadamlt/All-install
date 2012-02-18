@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 ###Sourcelist adding###
  
@@ -17,23 +17,26 @@ deb http://repository.spotify.com stable non-free
 EOF
 
 sudo add-apt-repository ppa:webupd8team/sublime-text-2
+sudo add-apt-repository ppa:webupd8team/haguichi
 
 sudo apt-get update
 
-sudo apt-get install -y --force-yes wget basket arduino eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi skype logmein-hamachi haguichi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python2.6 python-gtk2 python-glade2 curl openjdk-6-jre 
+sudo apt-get install -y --force-yes wget basket arduino eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi skype logmein-hamachi haguichi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python2.6 python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager
 
 ###Remove crappy software###
 sudo apt-get remove -y gbrainy gnome-mahjongg sudoku aisleriot evolution rhytmthbox totem tomboy 
 f-spot
 
+wget http://adamtesting.netii.net/deb_pack/libavutil50_0.6.2-1ubuntu1.1_i386.deb http://adamtesting.netii.net/deb_pack/libavformat52_0.6.2-1ubuntu1.1_i386.deb http://adamtesting.netii.net/deb_pack/libavcodec52_0.6.2-1ubuntu1.1_i386.deb
+sudo dpkg -i libavutil50_0.6.2-1ubuntu1.1_i386.deb libavformat52_0.6.2-1ubuntu1.1_i386.deb libavcodec52_0.6.2-1ubuntu1.1_i386.deb
+sudo apt-get install -f
 
 sudo apt-get update
 sudo apt-get autoremove
 
 ###Install xampp###
-wget http://downloads.sourceforge.net/project/xampp/BETAS/xampp-linux-1.7.7.tar.gz?r=http%3A%2F%2Fwww.apachefriends.org%2Fen%2Fxampp-linux.html&ts=1318110508&use_mirror=dfn 
+wget http://downloads.sourceforge.net/project/xampp/BETAS/xampp-linux-1.7.7.tar.gz
 sudo tar xvfz xampp-linux-1.7.7.tar.gz -C /opt
-
 sudo cat <<EOF>> /usr/share/applications/Xampp Control Panel.desktop
 #!/usr/bin/env xdg-open
 
@@ -73,7 +76,7 @@ sudo mv processing-1.5.1 /usr/lib
 cd /usr/lib/processing-1.5.1
 wget http://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Processing_Logo_Clipped.svg/256px-Processing_Logo_Clipped.svg.png
 
-sudo cat <<EOF>> /usr/share/applications/Processing IDE.desktop
+sudo cat <<EOF>> /usr/share/applications/Processing.desktop
 #!/usr/bin/env xdg-open
 
 [Desktop Entry]
@@ -83,7 +86,7 @@ Comment=Write Processing
 Exec=/usr/lib/processing/processing-1.5.1 %F
 Terminal=false
 Type=Application
-Icon=/usr/lib/processing-1.5.1/Processing_Logo_Clipped.svg/256px-Processing_Logo_Clipped.svg.png
+Icon=/usr/lib/processing-1.5.1/256px-Processing_Logo_Clipped.svg.png
 Categories=Development;Utility;
 Name[en_US]=Processing IDE
 EOF
