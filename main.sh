@@ -97,3 +97,12 @@ chmod +x netbeans-7.0.1-ml-php-linux.sh
 ./netbeans-7.0.1-ml-php-linux.sh
 
 sudo apt-get autoremove
+
+#Create alias'es#
+cat <<EOF>> ~/.bashrc
+alias lampp-start   = 'sudo /opt/lampp/lampp start'
+alias lampp-restart = 'sudo /opt/lampp/lampp restart'
+alias lampp-stop    = 'sudo /opt/lampp/lampp stop'
+alias mysql-cmd     = 'sudo /opt/lampp/bin/mysql -u root'
+EOF
+
