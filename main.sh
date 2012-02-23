@@ -1,7 +1,6 @@
 #!/bin/bash
-
 ###Sourcelist adding###
- 
+sudo chmod 777 /etc/apt/sources.list 
 sudo cat <<EOF>> /etc/apt/sources.list
 #Gnoduino
 deb http://ppa.launchpad.net/pmjdebruijn/gnoduino-release/ubuntu oneiric main
@@ -15,13 +14,13 @@ deb http://linux.dropbox.com/ubuntu oneiric main
 #Spotify
 deb http://repository.spotify.com stable non-free
 EOF
-
+sudo chmod 700 /etc/apt/sources.list
 sudo add-apt-repository ppa:webupd8team/sublime-text-2
 sudo add-apt-repository ppa:webupd8team/haguichi
 
 sudo apt-get update
 
-sudo apt-get install -y --force-yes wget basket arduino eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi skype logmein-hamachi haguichi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python2.6 python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager
+sudo apt-get install -y --force-yes wget basket arduino eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi skype vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python2.6 python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager
 
 ###Remove crappy software###
 sudo apt-get remove -y gbrainy gnome-mahjongg sudoku aisleriot evolution rhytmthbox totem tomboy 
@@ -33,6 +32,8 @@ sudo apt-get install -f
 
 sudo apt-get update
 sudo apt-get autoremove
+
+sudo chmod -R 777 /usr/share/applications 
 
 ###Install xampp###
 wget http://downloads.sourceforge.net/project/xampp/BETAS/xampp-linux-1.7.7.tar.gz
@@ -90,6 +91,8 @@ Icon=/usr/lib/processing-1.5.1/256px-Processing_Logo_Clipped.svg.png
 Categories=Development;Utility;
 Name[en_US]=Processing IDE
 EOF
+
+sudo chmod -R 700 /usr/share/applications 
 
 ###Install Netbeans###
 wget http://download.netbeans.org/netbeans/7.0.1/final/bundles/netbeans-7.0.1-ml-php-linux.sh
