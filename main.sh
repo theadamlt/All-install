@@ -13,10 +13,13 @@ deb http://dl.google.com/linux/talkplugin/deb/ stable main
 deb http://linux.dropbox.com/ubuntu oneiric main
 #Spotify
 deb http://repository.spotify.com stable non-free
+#Skype
+deb http://download.skype.com/linux/repos/debian/ stable non-free
 EOF
 sudo chmod 700 /etc/apt/sources.list
 sudo add-apt-repository ppa:webupd8team/sublime-text-2
 sudo add-apt-repository ppa:webupd8team/haguichi
+sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 0xd66b746e
 
 sudo apt-get update
 
