@@ -1,6 +1,5 @@
 #!/bin/bash
 ###Sourcelist adding###
-#sudo chmod 777 /etc/apt/sources.list 
 sudo cat <<EOF>> /etc/apt/sources.list
 #Gnoduino
 deb http://ppa.launchpad.net/pmjdebruijn/gnoduino-release/ubuntu oneiric main
@@ -14,7 +13,6 @@ deb http://linux.dropbox.com/ubuntu oneiric main
 #Spotify
 deb http://repository.spotify.com stable non-free
 EOF
-#sudo chmod 700 /etc/apt/sources.list
 sudo add-apt-repository ppa:webupd8team/sublime-text-2
 sudo add-apt-repository ppa:webupd8team/haguichi
 sudo add-apt-repository ppa:atareao/atareao
@@ -36,7 +34,6 @@ sudo apt-get install -f
 sudo apt-get update
 sudo apt-get autoremove
 
-#sudo chmod -R 777 /usr/share/applications 
 
 ###Install xampp###
 wget http://downloads.sourceforge.net/project/xampp/BETAS/xampp-linux-1.7.7.tar.gz
