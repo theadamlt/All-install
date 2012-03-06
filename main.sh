@@ -94,9 +94,8 @@ EOF
 
 #Create alias'es#
 cat <<EOF>> ~/.bashrc
-alias 'lampp-start'='sudo /opt/lampp/lampp start'
-alias 'lampp-restart'='sudo /opt/lampp/lampp restart'
-alias 'lampp-stop'='sudo /opt/lampp/lampp stop'
+alias 'mysql-cmd'='sudo /opt/lampp/bin/mysql -u root'
+alias 'lampp'='sudo /opt/lampp/lampp'
 alias 'mysql-cmd'='sudo /opt/lampp/bin/mysql -u root'
 EOF
 
