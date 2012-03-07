@@ -107,9 +107,7 @@ wget http://download.netbeans.org/netbeans/7.0.1/final/bundles/netbeans-7.0.1-ml
 chmod +x netbeans-7.0.1-ml-php-linux.sh
 ./netbeans-7.0.1-ml-php-linux.sh
 
-#Create the default.list
-echo'
-[Default Applications]
+sudo bash -c 'echo "[Default Applications]
 application/csv=libreoffice-calc.desktop
 application/excel=libreoffice-calc.desktop
 application/msexcel=libreoffice-calc.desktop
@@ -350,5 +348,9 @@ text/xml=firefox.desktop;google-chrome.desktop
 application/xhtml_xml=google-chrome.desktop
 x-scheme-handler/http=firefox.desktop;google-chrome.desktop
 x-scheme-handler/https=firefox.desktop;google-chrome.desktop
-x-scheme-handler/ftp=google-chrome.desktop' > /etc/gnome/defaults.list
-tail /etc/gnome/defaults.list
+x-scheme-handler/ftp=google-chrome.desktop" > "/etc/gnome/defaults.list"'
+
+# #Create the default.list
+# echo'
+# text here' > /etc/gnome/defaults.list
+# tail /etc/gnome/defaults.list
