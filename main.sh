@@ -1,6 +1,6 @@
 #!/bin/bash
 ###Sourcelist adding###
-sudo cat <<EOF>> /etc/apt/sources.list
+echo '
 #Gnoduino
 deb http://ppa.launchpad.net/pmjdebruijn/gnoduino-release/ubuntu oneiric main
 deb-src http://ppa.launchpad.net/pmjdebruijn/gnoduino-release/ubuntu oneiric main
@@ -11,8 +11,10 @@ deb http://dl.google.com/linux/talkplugin/deb/ stable main
 #Dropbox
 deb http://linux.dropbox.com/ubuntu oneiric main
 #Spotify
-deb http://repository.spotify.com stable non-free
-EOF
+deb http://repository.spotify.com stable non-free' | sudo tee -a /etc/apt/sources.list
+tail /etc/apt/sources.list
+
+
 sudo add-apt-repository ppa:webupd8team/sublime-text-2
 sudo add-apt-repository ppa:webupd8team/haguichi
 sudo add-apt-repository ppa:atareao/atareao
@@ -21,7 +23,7 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E9CFF4E
 
 sudo apt-get update
 
-sudo apt-get install -y --force-yes wget basket arduino eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi skype vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python2.6 python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager touchpad-indicator
+sudo apt-get install -y --force-yes wget basket arduino eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python2.6 python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager touchpad-indicator ruby1.9.1
 
 ###Remove crappy software###
 sudo apt-get remove -y gbrainy gnome-mahjongg sudoku aisleriot evolution rhytmthbox totem tomboy 
@@ -38,9 +40,10 @@ sudo apt-get autoremove
 ###Install xampp###
 wget http://downloads.sourceforge.net/project/xampp/BETAS/xampp-linux-1.7.7.tar.gz
 sudo tar xvfz xampp-linux-1.7.7.tar.gz -C /opt
-sudo cat <<EOF>> /usr/share/applications/Xampp Control Panel.desktop
-#!/usr/bin/env xdg-open
 
+sudo touch /usr/share/applications/Xampp Control Panel.desktop
+echo '
+#!/usr/bin/env xdg-open
 
 [Desktop Entry]
 Name=XAMPP Control Panel
@@ -51,10 +54,11 @@ Terminal=true
 Type=Application
 Icon=/opt/lampp/htdocs/favicon.ico
 Categories=Development;
-Name[en_US]=XAMPP Control Panel
-EOF
+Name[en_US]=XAMPP Control Panel' | sudo tee -a /usr/share/applications/Xampp Control Panel.desktop
+tail /usr/share/applications/Xampp Control Panel.desktop
 
-sudo cat <<EOF>> /usr/share/applications/MySQL Commandline.desktop
+sudo touch /usr/share/applications/MySQL Commandline.desktop
+echo '
 #!/usr/bin/env xdg-open
 
 [Desktop Entry]
@@ -66,8 +70,8 @@ Terminal=true
 Type=Application
 Icon=/opt/lampp/htdocs/favicon.ico
 Categories=Development;
-Name[en_US]=MySQL Commandline
-EOF
+Name[en_US]=MySQL Commandline' | sudo tee -a /usr/share/applications/MySQL Commandline.desktop
+tail /usr/share/applications/MySQL Commandline.desktop
 
 
 ###Processing###
@@ -77,7 +81,8 @@ sudo mv processing-1.5.1 /usr/lib
 cd /usr/lib/processing-1.5.1
 wget http://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Processing_Logo_Clipped.svg/256px-Processing_Logo_Clipped.svg.png
 
-sudo cat <<EOF>> /usr/share/applications/Processing.desktop
+sudo touch /usr/share/applications/Processing.desktop
+echo'
 #!/usr/bin/env xdg-open
 
 [Desktop Entry]
@@ -89,8 +94,8 @@ Terminal=false
 Type=Application
 Icon=/usr/lib/processing-1.5.1/256px-Processing_Logo_Clipped.svg.png
 Categories=Development;Utility;
-Name[en_US]=Processing IDE
-EOF
+Name[en_US]=Processing IDE' | sudo tee -a /usr/share/applications/Processing.desktop
+tail /usr/share/applications/Processing.desktop
 
 #Create alias'es#
 cat <<EOF>> ~/.bashrc
@@ -106,4 +111,5 @@ chmod +x netbeans-7.0.1-ml-php-linux.sh
 ./netbeans-7.0.1-ml-php-linux.sh
 
 sudo apt-get autoremove
-
+sudo apt-get update
+sudo apt-get dist-upgrade -y
