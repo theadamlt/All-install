@@ -100,7 +100,6 @@ Name[en_US]=Processing IDE" > /usr/share/applications/Processing.desktop'
 cat <<EOF>> ~/.bashrc
 alias 'mysql-cmd'='sudo /opt/lampp/bin/mysql -u root'
 alias 'lampp'='sudo /opt/lampp/lampp'
-alias 'mysql-cmd'='sudo /opt/lampp/bin/mysql -u root'
 EOF
 
 sudo apt-get autoremove -y
@@ -121,7 +120,7 @@ application/ogg=banshee.desktop
 application/pdf=evince.desktop
 application/postscript=evince.desktop
 application/rtf=libreoffice-writer.desktop
-application/tab-separated-values=libreoffice-calc.desktop
+apiplication/tab-separated-values=libreoffice-calc.desktop
 application/vnd.lotus-1-2-3=libreoffice-calc.desktop
 application/vnd.ms-excel=libreoffice-calc.desktop
 application/vnd.ms-word=libreoffice-writer.desktop
