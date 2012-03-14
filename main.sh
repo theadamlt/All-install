@@ -354,7 +354,9 @@ x-scheme-handler/http=firefox.desktop;google-chrome.desktop
 x-scheme-handler/https=firefox.desktop;google-chrome.desktop
 x-scheme-handler/ftp=google-chrome.desktop" > "/etc/gnome/defaults.list"'
 
-# #Create the default.list
-# echo'
-# text here' > /etc/gnome/defaults.list
-# tail /etc/gnome/defaults.list
+git config --global core.excludesfile ~/.gitignore
+cat <<EOF>> ~/.gitignore
+sftp-config.json
+EOF
+
+echo 'SET UP GIT NOW'
