@@ -11,7 +11,10 @@ deb http://dl.google.com/linux/talkplugin/deb/ stable main
 #Dropbox
 deb http://linux.dropbox.com/ubuntu oneiric main
 #Spotify
-deb http://repository.spotify.com stable non-free' | sudo tee -a /etc/apt/sources.list
+deb http://repository.spotify.com stable non-free
+# wxWidgets/wxPython repository at apt.wxwidgets.org
+deb http://apt.wxwidgets.org/ natty-wx main
+deb-src http://apt.wxwidgets.org/ natty-wx main' | sudo tee -a /etc/apt/sources.list
 tail /etc/apt/sources.list
 
 
@@ -23,12 +26,11 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E9CFF4E
 
 sudo apt-get update
 
-sudo apt-get install -y --force-yes wget basket arduino eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python2.6 python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager touchpad-indicator ruby1.9.2 gtk2-engines-pixbuf nodejs
+sudo apt-get install -y --force-yes wget eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python2.6 python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager touchpad-indicator ruby1.9.2 gtk2-engines-pixbuf nodejs php-pear python-wxgtk2.8 python-wxtools wx2.8-i18n tree
 
 ###Ruby gems###
 sudo gem install pagoda
 sudo gem install heroku
-
 
 ###Remove crappy software###
 sudo apt-get remove -y gbrainy gnome-mahjongg sudoku aisleriot evolution rhytmthbox totem tomboy 
