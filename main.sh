@@ -21,12 +21,13 @@ tail /etc/apt/sources.list
 sudo add-apt-repository ppa:webupd8team/sublime-text-2
 sudo add-apt-repository ppa:webupd8team/haguichi
 sudo add-apt-repository ppa:atareao/atareao
+sudo add-apt-repository ppa:mozillateam/firefox-next
 sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 0xd66b746e
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E9CFF4E
 
 sudo apt-get update
 
-sudo apt-get install -y --force-yes wget eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python2.6 python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager touchpad-indicator ruby1.9.2 gtk2-engines-pixbuf nodejs php-pear python-wxgtk2.8 python-wxtools wx2.8-i18n tree
+sudo apt-get install -y --force-yes wget eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python2.6 python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager touchpad-indicator ruby1.9.2 gtk2-engines-pixbuf nodejs php-pear python-wxgtk2.8 python-wxtools wx2.8-i18n tree firefox
 
 ###Ruby gems###
 sudo gem install pagoda
