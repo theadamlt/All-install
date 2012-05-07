@@ -103,7 +103,11 @@ Name[en_US]=Processing IDE" > /usr/share/applications/Processing.desktop'
 cat <<EOF>> ~/.bashrc
 alias 'mysql-cmd'='sudo /opt/lampp/bin/mysql -u root'
 alias 'lampp'='sudo /opt/lampp/lampp'
+alias 'sn'='sudo nautilus'
+alias 'gibo'='/home/adam/gibo/gibo'
 EOF
+
+git clone https://github.com/simonwhitaker/gitignore-boilerplates.git /home/adam/gibo
 
 sudo apt-get autoremove -y
 sudo apt-get update -y
