@@ -27,20 +27,32 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E9CFF4E
 
 sudo apt-get update
 
-sudo apt-get install -y --force-yes wget eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python2.6 python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager touchpad-indicator ruby1.9.1 gtk2-engines-pixbuf nodejs php-pear python-wxgtk2.8 python-wxtools wx2.8-i18n tree firefox
+sudo apt-get install -y --force-yes wget eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python2.6 python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager touchpad-indicator gtk2-engines-pixbuf nodejs php-pear python-wxgtk2.8 python-wxtools wx2.8-i18n tree firefox curl libmysqlclient-dev build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
+
+
+###Ruby install###
+sudo bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+
+umask g+w
+source /etc/profile.d/rvm.sh
+
+sudo chown -R $USER:$USER /usr/local/rvm
+
+rvm install 1.9.2
+rvm --default use 1.9.2
+
+
+
 
 ###Ruby gems###
-sudo gem install pagoda
-sudo gem install heroku
-sudo gem install sass
-sudo gem install compass
+gem install pagoda heroku sass compass rails
 
 ###Remove crappy software###
 sudo apt-get remove -y gbrainy gnome-mahjongg sudoku aisleriot evolution rhytmthbox totem tomboy 
 f-spot
 
 wget http://adamtesting.netii.net/deb_pack/libavutil50_0.6.2-1ubuntu1.1_i386.deb http://adamtesting.netii.net/deb_pack/libavformat52_0.6.2-1ubuntu1.1_i386.deb http://adamtesting.netii.net/deb_pack/libavcodec52_0.6.2-1ubuntu1.1_i386.deb
-sudo dpkg -i libavutil50_0.6.2-1ubuntu1.1_i386.deb libavformat52_0.6.2-1ubuntu1.1_i386.deb libavcodec52_0.6.2-1ubuntu1.1_i386.deb
+sudo dpkg -i libavutil50_0.6.2-1ub ntu1.1_i386.deb libavformat52_0.6.2-1ubuntu1.1_i386.deb libavcodec52_0.6.2-1ubuntu1.1_i386.deb
 sudo apt-get install -f
 
 sudo apt-get update
