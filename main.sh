@@ -27,7 +27,7 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E9CFF4E
 
 sudo apt-get update
 
-sudo apt-get install -y --force-yes wget eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text-2 spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python2.6 python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager touchpad-indicator gtk2-engines-pixbuf nodejs php-pear python-wxgtk2.8 python-wxtools wx2.8-i18n tree firefox curl libmysqlclient-dev build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
+sudo apt-get install -y --force-yes wget eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text-2-dev spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager touchpad-indicator gtk2-engines-pixbuf nodejs php-pear python-wxgtk2.8 python-wxtools wx2.8-i18n tree firefox curl libmysqlclient-dev build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
 
 
 ###Ruby install###
@@ -47,8 +47,14 @@ rvm --default use 1.9.2
 ###Ruby gems###
 gem install pagoda heroku sass compass rails
 
+sudo npm -g install grunt yuidoc
+
+sudo pear channel-discover pear.phpdoc.org
+sudo pear install phpdoc/phpDocumentor-alpha
+
+
 ###Remove crappy software###
-sudo apt-get remove -y gbrainy gnome-mahjongg sudoku aisleriot evolution rhytmthbox totem tomboy 
+sudo apt-get remove -y gbrainy gnome-mahjongg sudoku aisleriot evolution rhytmthbox totem tomboy
 f-spot
 
 wget http://adamtesting.netii.net/deb_pack/libavutil50_0.6.2-1ubuntu1.1_i386.deb http://adamtesting.netii.net/deb_pack/libavformat52_0.6.2-1ubuntu1.1_i386.deb http://adamtesting.netii.net/deb_pack/libavcodec52_0.6.2-1ubuntu1.1_i386.deb
@@ -118,11 +124,11 @@ cat <<EOF>> ~/.bashrc
 alias 'mysql-cmd'='sudo /opt/lampp/bin/mysql -u root'
 alias 'lampp'='sudo /opt/lampp/lampp'
 alias 'sn'='sudo nautilus'
-alias 'gibo'='/home/adam/gibo/gibo'
+alias 'gibo'='~/gibo/gibo'
 EOF
 
-git clone https://github.com/simonwhitaker/gitignore-boilerplates.git /home/adam/gibo
-
+git clone https://github.com/simonwhitaker/gitignore-boilerplates.git ~/gibo
+chmod +x ~/gibo/gibo
 sudo apt-get autoremove -y
 sudo apt-get update -y
 sudo apt-get dist-upgrade -y
