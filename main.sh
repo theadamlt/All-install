@@ -22,35 +22,46 @@ sudo add-apt-repository ppa:webupd8team/sublime-text-2
 sudo add-apt-repository ppa:webupd8team/haguichi
 sudo add-apt-repository ppa:atareao/atareao
 sudo add-apt-repository ppa:mozillateam/firefox-next
+sudo add-apt-repository ppa:ondrej/php5
 sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 0xd66b746e
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4E9CFF4E
 
+
 sudo apt-get update
 
-sudo apt-get install -y --force-yes wget eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text-2-dev spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager touchpad-indicator gtk2-engines-pixbuf nodejs php-pear python-wxgtk2.8 python-wxtools wx2.8-i18n tree firefox curl libmysqlclient-dev build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
+echo 'Will now install LAMP. use dbconfig-common on phpmyadmin. Apache might need some config'
+
+###Lamp###
+sudo apt-get install -y lamp-server^ libapache2-mod-auth-mysql phpmyadmin php-pear
+curl get.fuelphp.com/oil | sh
+curl -s http://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+
+sudo pear channel-discover pear.phpdoc.org
+sudo pear install phpdoc/phpDocumentor-alpha
+sudo pear config-set auto_discover 1
+sudo pear install pear.phpunit.de/PHPUnit
 
 
-###Ruby install###
-sudo bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
-
-umask g+w
-source /etc/profile.d/rvm.sh
-
-sudo chown -R $USER:$USER /usr/local/rvm
-
-rvm install 1.9.2
-rvm --default use 1.9.2
 
 
+sudo apt-get install -y --force-yes wget eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager touchpad-indicator gtk2-engines-pixbuf nodejs python-wxgtk2.8 python-wxtools wx2.8-i18n tree firefox curl libmysqlclient-dev build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion netbeans
+
+
+
+
+
+curl -L https://get.rvm.io | bash -s stable --ruby
+
+source /home/adam/.rvm/scripts/rvm
+rvm install 1.9.3
+rvm use 1.9.3
 
 
 ###Ruby gems###
 gem install pagoda heroku sass compass rails
 
 sudo npm -g install grunt yuidoc
-
-sudo pear channel-discover pear.phpdoc.org
-sudo pear install phpdoc/phpDocumentor-alpha
 
 
 ###Remove crappy software###
@@ -60,83 +71,135 @@ f-spot
 wget http://adamtesting.netii.net/deb_pack/libavutil50_0.6.2-1ubuntu1.1_i386.deb http://adamtesting.netii.net/deb_pack/libavformat52_0.6.2-1ubuntu1.1_i386.deb http://adamtesting.netii.net/deb_pack/libavcodec52_0.6.2-1ubuntu1.1_i386.deb
 sudo dpkg -i libavutil50_0.6.2-1ub ntu1.1_i386.deb libavformat52_0.6.2-1ubuntu1.1_i386.deb libavcodec52_0.6.2-1ubuntu1.1_i386.deb
 sudo apt-get install -f
-
-sudo apt-get update
 sudo apt-get autoremove
 
 
 ###Install xampp###
-wget http://downloads.sourceforge.net/project/xampp/BETAS/xampp-linux-1.7.7.tar.gz
-sudo tar xvfz xampp-linux-1.7.7.tar.gz -C /opt
+wget http://downloads.sourceforge.net/project/xampp/BETAS/xampp-linux-1.8.0.tar.gz
+sudo tar xvfz xampp-linux-1.8.0.tar.gz -C /opt
 
-sudo touch "/usr/share/applications/Xampp Control Panel.desktop"
-sudo bash -c 'echo "#!/usr/bin/env xdg-open
-[Desktop Entry]
-Name=XAMPP Control Panel
-GenericName=XAMPP Control Panel
-Comment=Xampp Control Panel
-Exec=sudo /opt/lampp/share/xampp-control-panel/xampp-control-panel %F
-Terminal=true
-Type=Application
-Icon=/opt/lampp/htdocs/favicon.ico
-Categories=Development;
-Name[en_US]=XAMPP Control Panel" > "/usr/share/applications/Xampp Control Panel.desktop"'
-
-sudo touch '/usr/share/applications/MySQL Commandline.desktop'
-sudo bash -c 'echo "#!/usr/bin/env xdg-open
-
-[Desktop Entry]
-Name=MySQL Commandline
-GenericName=MySQL Control Panel
-Comment=XAMPP/MySQL Commandline
-Exec=sudo /opt/lampp/bin/mysql -u root %F
-Terminal=true
-Type=Application
-Icon=/opt/lampp/htdocs/favicon.ico
-Categories=Development;
-Name[en_US]=MySQL Commandline" > "/usr/share/applications/MySQL Commandline.desktop"'
+cat  /home/adam/.server
+echo <<EOF>>#/usr/bin/python2.7
+import commands
+import sys
 
 
-###Processing###
-wget http://processing.googlecode.com/files/processing-1.5.1-linux.tgz
-tar zxvf processing-1.5.1-linux.tgz
-sudo mv processing-1.5.1 /usr/lib
-cd /usr/lib/processing-1.5.1
-wget http://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Processing_Logo_Clipped.svg/256px-Processing_Logo_Clipped.svg.png
+if len(sys.argv) == 1 :
+	print 'Argument not valid'
+	sys.exit()
 
-sudo touch /usr/share/applications/Processing.desktop
+if sys.argv[1] == 'start':
+	if commands.getoutput('apachectl start') == '''/usr/sbin/apachectl: 87: ulimit: error setting limit (Operation not permitted)
+(13)Permission denied: make_sock: could not bind to address 0.0.0.0:80
+no listening sockets available, shutting down
+Unable to open logs
+Action 'start' failed.
+The Apache error log may have more information.''':
+		print 'You are not root!'
+		sys.exit()
 
-sudo bash -c 'echo "#!/usr/bin/env xdg-open
+	print "Apache started!"
+	commands.getoutput('service mysql start')
+	print "MySQL Started!"
 
-[Desktop Entry]
-Name=Processing IDE
-GenericName=IDE
-Comment=Write Processing
-Exec=/usr/lib/processing/processing-1.5.1 %F
-Terminal=false
-Type=Application
-Icon=/usr/lib/processing-1.5.1/256px-Processing_Logo_Clipped.svg.png
-Categories=Development;Utility;
-Name[en_US]=Processing IDE" > /usr/share/applications/Processing.desktop'
+elif sys.argv[1] == 'stop':
+	if commands.getoutput('apachectl stop') == '''/usr/sbin/apachectl: 87: ulimit: error setting limit (Operation not permitted)
+httpd (pid 21266?) not running''':
+		print 'You are not root!'
+		sys.exit()
+	print "Apache stopped..."
+	commands.getoutput('service mysql stop')
+	print "MySQL stopped..."
+
+
+elif sys.argv[1] == 'restart':
+	if commands.getoutput('apachectl restart') == '''/usr/sbin/apachectl: 87: ulimit: error setting limit (Operation not permitted)
+httpd not running, trying to start
+(13)Permission denied: make_sock: could not bind to address 0.0.0.0:80
+no listening sockets available, shutting down
+Unable to open logs
+Action 'restart' failed.
+The Apache error log may have more information.''':
+		print 'You are not root!'
+		sys.exit()
+
+	print "Apache restarted!"
+	commands.getoutput('service mysql restart')
+	print "MySQL restarted!"
+else:
+	print 'Argument not valid'
+EOF > /home/adam/.server
 
 #Create alias'es#
 cat <<EOF>> ~/.bashrc
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias 'mysql-cmd'='sudo /opt/lampp/bin/mysql -u root'
 alias 'lampp'='sudo /opt/lampp/lampp'
 alias 'sn'='sudo nautilus'
-alias 'gibo'='~/gibo/gibo'
+alias 'serverstatus'='sudo python /home/adam/.server'
+source /home/adam/.rvm/scripts/rvm
+alias 'cake_new'='git clone git://github.com/cakephp/cakephp.git'
+
+twilight() {
+echo '{
+	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
+	"font_size": 9.0,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"SublimeOnSaveBuild"
+	],
+	"ignored_words":
+	[
+		"Cmd",
+		"Ctrl",
+		"Github",
+		"Gitignore",
+		"config/sublime",
+		"gibo",
+		"gitignore",
+		"https://github",
+		"plugin"
+	],
+	"soda_classic_tabs": true,
+	"theme": "Soda Dark.sublime-theme"
+}' > '/home/adam/.config/sublime-text-2/Packages/User/Preferences.sublime-settings'
+}
+
+frecklemod() {
+echo '{
+	"color_scheme": "Packages/themes/FreckleMod.tmTheme",
+	"font_size": 9.0,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"SublimeOnSaveBuild"
+	],
+	"ignored_words":
+	[
+		"Cmd",
+		"Ctrl",
+		"Github",
+		"Gitignore",
+		"config/sublime",
+		"gibo",
+		"gitignore",
+		"https://github",
+		"plugin"
+	],
+	"soda_classic_tabs": true,
+	"theme": "Soda Light.sublime-theme"
+}' > '/home/adam/.config/sublime-text-2/Packages/User/Preferences.sublime-settings'
+}
 EOF
 
-git clone https://github.com/simonwhitaker/gitignore-boilerplates.git ~/gibo
-chmod +x ~/gibo/gibo
-sudo apt-get autoremove -y
-sudo apt-get update -y
-sudo apt-get dist-upgrade -y
 
-###Install Netbeans###
-wget http://download.netbeans.org/netbeans/7.0.1/final/bundles/netbeans-7.0.1-ml-php-linux.sh
-chmod +x netbeans-7.0.1-ml-php-linux.sh
-./netbeans-7.0.1-ml-php-linux.sh
+
+git clone https://github.com/simonwhitaker/gitignore-boilerplates.git ~/gibo
+sudo cp -r gibo/gibo /usr/bin
+sudo cp -r gibo/gibo-completion.bash /usr/bin
+sudo cp -r gibo/gibo-completion.zsh /usr/bin
+sudo chmod +x /usr/bin/gibo
 
 sudo bash -c 'echo "[Default Applications]
 application/csv=libreoffice-calc.desktop
