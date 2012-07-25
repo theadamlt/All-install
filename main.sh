@@ -45,7 +45,7 @@ sudo pear install pear.phpunit.de/PHPUnit
 
 
 
-sudo apt-get install -y --force-yes wget eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager touchpad-indicator gtk2-engines-pixbuf nodejs python-wxgtk2.8 python-wxtools wx2.8-i18n tree firefox curl libmysqlclient-dev build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion netbeans
+sudo apt-get install -y --force-yes wget eagle gresistor gimp filezilla thunderbird git-cola eclipse glade audacity vlc cheese wine screen irssi vim vim-common vim-gnome vim-gui-common vim-runtime git git-gui git-doc google-chrome-beta google-talkplugin nautilus-dropbox sublime-text spotify-client-qt ubuntu-restricted-extras gnoduino iptraf python-gtk2 python-glade2 curl openjdk-6-jre wireshark compizconfig-settings-manager touchpad-indicator gtk2-engines-pixbuf nodejs python-wxgtk2.8 python-wxtools wx2.8-i18n tree firefox curl libmysqlclient-dev build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion netbeans tuxguitar rosegarden
 
 
 
